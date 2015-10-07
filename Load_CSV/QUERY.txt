@@ -1,0 +1,24 @@
+CREATE TABLE transaction
+(
+  Account varchar(20),
+  Description varchar(20),
+  CurrencyCode varchar(20),
+  Amount integer
+);
+
+
+insert into transaction (Account, Description, CurrencyCode, Amount) values('var',2,3,4)
+select * from transaction
+DO
+$do$
+BEGIN 
+for i in 1..100 LOOP
+  INSERT INTO playtime.meta_random_sample (col_i, col_id) -- use col names
+   SELECT i, id
+   FROM   tbl
+   ORDER  BY random()
+   LIMIT  15000;
+END LOOP;
+END
+$do$;
+
